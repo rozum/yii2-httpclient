@@ -53,7 +53,7 @@ class StreamTransport extends Transport
         $contextOptions = ArrayHelper::merge($contextOptions, $this->composeContextOptions($request->getOptions()));
 
         $token = $request->client->createRequestLogToken($method, $url, $headers, $content);
-        Yii::info($token, __METHOD__);
+        Yii::trace($token, __METHOD__);
         Yii::beginProfile($token, __METHOD__);
 
         try {
